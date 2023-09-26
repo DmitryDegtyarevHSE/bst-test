@@ -1,0 +1,32 @@
+### Correct request
+POST http://localhost:8000/api/robots/add/
+Content-Type: application/json
+
+{
+  "model": "R2",
+  "version": "D2",
+  "created": "2022-12-31 23:59:59"
+}
+
+
+### Invalid Data
+POST http://localhost:8000/api/robots/add/
+Content-Type: application/json
+
+{
+  "model": "R2",
+  "version": "D2",
+  "created": "2022-13-31 23:59:59"
+}
+
+
+### Invalid Json
+POST http://localhost:8000/api/robots/add/
+Content-Type: application/json
+
+{
+  "model": "R2",
+  "versios": "D2",
+  "created_at": "2022-13-31 23:59:59"
+}
+
