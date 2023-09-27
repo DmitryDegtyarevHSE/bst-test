@@ -14,6 +14,7 @@ class RobotView(View):
     http_method_names = ['post']
 
     def post(self, request):
+        """ Обработчик метода создания экзямляра робота """
         try:
             data = json.loads(request.body)
             save_robot(data)
@@ -23,6 +24,7 @@ class RobotView(View):
 
 
 def download_excel(request):
+    """ Обработчик запроса на получение отчета о роботах, произведенных за неделю """
     wb = create_excel_report()
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = \

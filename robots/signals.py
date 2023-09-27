@@ -8,7 +8,7 @@ from .services import get_customers_list, send_notifications
 
 @receiver(signal=post_save, sender=Robot)
 def notify_customer(instance, **kwargs):
-    print("сработал сигнал")
+    """ Обработчик сигнала, запускающий рассылку уведомлений """
     customers = get_customers_list(serial=instance.serial)
     if customers:
         try:
